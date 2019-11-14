@@ -1,2 +1,5 @@
 # Arquivos de configuração do Finder (MacOS)
 .DS_Store
+
+# Arquivos de Log.
+*.log
