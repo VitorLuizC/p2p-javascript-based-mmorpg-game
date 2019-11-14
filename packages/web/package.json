@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "main": "index.js",
   "license": "GPL-3.0-only",
+  "scripts": {
+    "dev": "parcel src/index.html"
+  },
   "devDependencies": {
     "parcel-bundler": "^1.12.4"
   }

@@ -6,3 +6,9 @@
 
 # Módulos do NodeJS.
 node_modules/
+
+# Diretório de cache do Parcel.
+.cache/
+
+# Diretório com os arquivos para publicação.
+dist/
