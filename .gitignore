@@ -3,3 +3,6 @@
 
 # Arquivos de Log.
 *.log
+
+# Módulos do NodeJS.
+node_modules/
