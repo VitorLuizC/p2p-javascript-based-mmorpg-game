@@ -1,0 +1,5 @@
+{
+  "name": "p2p-javascript-based-mmorpg",
+  "private": true,
+  "workspaces": ["packages/*"]
+}
