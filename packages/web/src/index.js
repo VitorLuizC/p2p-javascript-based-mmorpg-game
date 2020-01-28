@@ -1,5 +1,6 @@
 import { updateCanvasSize } from './canvas';
 import { getWindowSize } from './size';
+import createAnimation from './createAnimation';
 
 /**
  * Renderer is just a `<canvas />`.
@@ -15,4 +16,18 @@ window.addEventListener('resize', () => {
   updateCanvasSize(renderer, getWindowSize());
 });
 
-context.fillText('Katon, carai!', renderer.width / 2, renderer.height / 2);
+let state = {
+  x: 0,
+  y: 0
+};
+
+const animation = createAnimation(() => {
+  context.clearRect(0, 0, renderer.width, renderer.height);
+
+  state.x = state.x >= renderer.width ? 0 : state.x + 1;
+  state.y = state.y >= renderer.height ? 0 : state.y + 1;
+
+  context.fillText('Katon, carai!', state.x, state.y);
+});
+
+animation.start();
