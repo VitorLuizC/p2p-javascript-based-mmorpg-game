@@ -1,18 +1,22 @@
 import { updateCanvasSize } from './canvas';
 import { getWindowSize } from './size';
-import createAnimation from './createAnimation';
+import { createAnimation } from './animation';
 
-/**
- * Renderer is just a `<canvas />`.
- * @type {HTMLCanvasElement}
- */
 const renderer = document.getElementById('renderer');
+
+if (!(renderer instanceof HTMLCanvasElement)) {
+  throw new Error('Renderer is not a `<canvas />`.');
+}
 
 const context = renderer.getContext('2d');
 
+if (!context) {
+  throw new Error('Couldn\'t get a context from renderer.');
+}
+
 updateCanvasSize(renderer, getWindowSize());
 
-window.addEventListener('resize', () => {
+window.addEventListener('resize', (): void => {
   updateCanvasSize(renderer, getWindowSize());
 });
 
@@ -21,7 +25,7 @@ let state = {
   y: 0
 };
 
-const animation = createAnimation(() => {
+const animation = createAnimation((): void => {
   context.clearRect(0, 0, renderer.width, renderer.height);
 
   state.x = state.x >= renderer.width ? 0 : state.x + 1;
