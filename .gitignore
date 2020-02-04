@@ -12,3 +12,12 @@ node_modules/
 
 # Diretório com os arquivos para publicação.
 dist/
+
+# Yarn
+# Módulo JavaScript do Yarn Plug'n'Play.
+.pnp.*
+
+# Arquivos gerados pelo Yarn, com exceção dos plugins e versões publicadas.
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
